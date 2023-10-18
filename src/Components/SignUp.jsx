@@ -11,6 +11,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const auth = getAuth();
 
+
+
 const SignUp = () => {
 
   const navigate = useNavigate();
@@ -28,6 +30,8 @@ const SignUp = () => {
     const email = form.get("email");
     const password = form.get("password");
     console.log(email, password, name);
+
+    
 
     setError("");
     setSuccess("");
@@ -66,8 +70,10 @@ const SignUp = () => {
         console.log(result.user);
         navigate(location?.state ? location.state : "/");
         setSuccess();
+      
         toast.success("Account created successfully", {
           position: toast.POSITION.TOP_CENTER,
+          
         });
       })
       .catch((error) => {

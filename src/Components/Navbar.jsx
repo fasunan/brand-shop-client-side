@@ -22,7 +22,7 @@ const Navbar = () => {
         <NavLink to={"/addProduct"}>Add Product</NavLink>
       </li>
 
-      
+
       <li>
         {" "}
         <NavLink to={"/signUp"}>SignUp</NavLink>
@@ -31,12 +31,12 @@ const Navbar = () => {
         {" "}
         <NavLink to={"/login"}>Login</NavLink>
       </li>
-      
+
     </>
   );
   return (
     <div>
-      <div className="navbar text-neutral-content bg-slate-700">
+      <div className="navbar text-purple-500 font-bold absolute z-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -62,6 +62,13 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
+          
+          <div className="avatar">
+            <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src="https://i.ibb.co/NjJdxNV/Ph-Xwt-RXN-400x400.jpg" />
+            </div>
+          </div>
+          <p className="text-xl ml-4 text-red-500">TECH-LAND</p>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>

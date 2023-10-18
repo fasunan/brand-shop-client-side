@@ -10,7 +10,7 @@ import Root from './Root';
 import Home from './Components/Home';
 import ErrorPage from './ErrorPage/ErrorPage';
 import AuthProvider from './Provider/AuthProvider';
-// import Login from './Components/LogIn';
+import Login from './Components/LogIn';
 import SignUp from './Components/SignUp';
 
 const router = createBrowserRouter([
@@ -21,12 +21,13 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: ()=>fetch('data.json')
       },
-      // {
-      //   path:"/login",
-      //   element: <Login></Login>
-      // },
+      {
+        path:"/login",
+        element: <Login></Login>
+      },
       {
         path:"/signUp",
         element: <SignUp></SignUp>
