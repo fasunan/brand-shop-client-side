@@ -6,8 +6,8 @@ import "aos/dist/aos.css";
 import Banner from "./Banner";
 
 const Home = () => {
-    const loadedData = useLoaderData();
-    console.log(loadedData)
+
+    const loadedData = useLoaderData();  
 
     useEffect(() => {
         Aos.init();

@@ -12,34 +12,45 @@ import ErrorPage from './ErrorPage/ErrorPage';
 import AuthProvider from './Provider/AuthProvider';
 import Login from './Components/LogIn';
 import SignUp from './Components/SignUp';
+import AddProduct from './PrivateRoute/AddProduct';
+import AllProducts from './PrivateRoute/AllProducts';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
+    children: [
       {
-        path:"/",
+        path: "/",
         element: <Home></Home>,
-        loader: ()=>fetch('data.json')
+        loader: () => fetch('data.json')
       },
       {
-        path:"/login",
+        path: "/login",
         element: <Login></Login>
       },
       {
-        path:"/signUp",
+        path: "/signUp",
         element: <SignUp></SignUp>
-      }
+      },
+      {
+        path: "/addProduct",
+        element: <AddProduct></AddProduct>
+      },
+      {
+        path: "/:name",
+        element: <AllProducts></AllProducts>,
+        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.name}`)
+      },
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <AuthProvider>
-   <RouterProvider router={router} />
-   </AuthProvider>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

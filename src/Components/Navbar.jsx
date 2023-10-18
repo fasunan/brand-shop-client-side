@@ -7,7 +7,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, userLogOut } = useContext(AuthContext);
-  console.log(user);
+  
   const handleLogOut = () => {
     userLogOut().then().catch();
   };
@@ -21,8 +21,6 @@ const Navbar = () => {
         {" "}
         <NavLink to={"/addProduct"}>Add Product</NavLink>
       </li>
-
-
       <li>
         {" "}
         <NavLink to={"/signUp"}>SignUp</NavLink>
