@@ -4,12 +4,20 @@ import { FaTwitter, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-gray-800 text-white font-serif rounded">
-      <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">All Event</a>
-      </nav>
+    <footer className="footer p-10 bg-gray-800 text-white font-serif rounded ">
+      <nav>
+    <header className="footer-title">Services</header> 
+    <a className="link link-hover">Branding</a> 
+    <a className="link link-hover">Marketing</a> 
+    <a className="link link-hover">Advertisement</a>
+  </nav> 
+  <nav>
+    <header className="footer-title">Company</header> 
+    <a className="link link-hover">About us</a> 
+    <a className="link link-hover">Contact</a> 
+    <a className="link link-hover">Jobs</a> 
+    
+  </nav>
       <nav>
         <p>Follow us on</p>
         <div className="grid grid-flow-col gap-4 text-2xl">
@@ -27,9 +35,11 @@ const Footer = () => {
           </a>
         </div>
       </nav>
-      <aside>
+      
+        {/* <div className="">
         <p>Copyright © 2023 - All right reserved by Event Coordinator</p>
-      </aside>
+        </div>
+       */}
     </footer>
   );
 };

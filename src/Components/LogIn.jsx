@@ -55,11 +55,17 @@ userLogIn(email, password)
       };
 
     return (
-        <div className="text-black">
+        <div className="text-black p-16">
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col items-center justify-center">
+                <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left mb-5">
                         <h1 className="text-5xl text-blue-400 ">Login with</h1>
+                        <p className="text-slate-800 font-medium">
+                                    Do not Have an Account? please
+                                    <Link to={"/signUp"}>
+                                        <button className="btn btn-link">Create Account</button>
+                                    </Link>
+                                </p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
@@ -104,12 +110,7 @@ userLogIn(email, password)
                             {logError && <p>{logError}</p>}
                             {success && <p>{success}</p>}
                             <div>
-                                <p className="text-slate-800 font-medium">
-                                    Do not Have an Account? please
-                                    <Link to={"/signUp"}>
-                                        <button className="btn btn-link">Create Account</button>
-                                    </Link>
-                                </p>
+                                
                             </div>
                             <p className="text-pink-600">Or you can log in with </p>
                             <div className="gap-4 font-serif flex text-base">

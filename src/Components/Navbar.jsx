@@ -82,13 +82,13 @@ const Navbar = () => {
           {user ? (
             <button
               onClick={handleLogOut}
-              className="h-8 w-16 rounded bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
+              className="h-8 w-16 rounded bg-gradient-to-r from-sky-900 via-indigo-900 to-purple-900 text-sm text-red-400"
             >
               Sign Out
             </button>
           ) : (
             <Link to={"/login"}>
-              <button className=" h-8 w-16 rounded bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... ">
+              <button className=" h-8 w-16 rounded bg-gradient-to-r from-sky-900 via-indigo-900 to-purple-900 text-red-400 ">
                 LogIn
               </button>
             </Link>

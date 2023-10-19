@@ -15,7 +15,9 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="flex justify-end -mt-10  mr-16 mb-8" data-aos="zoom-in">
+           
+            <div className="  bg-[url('https://i.ibb.co/chPwXGb/cropped-1366-768-456498.jpg')]">
+            <div className="flex justify-end -mt-10  mr-16 "  data-aos="zoom-in">
             <div className="grid grid-cols-1 gap-2 w-96 rounded-lg">
             {
                 loadedData.map(data => <div key={data.id}>
@@ -33,6 +35,7 @@ const Home = () => {
             }
         </div>
         </div>
+            </div>
         </div>
     );
 };

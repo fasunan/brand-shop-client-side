@@ -14,6 +14,7 @@ import Login from './Components/LogIn';
 import SignUp from './Components/SignUp';
 import AddProduct from './PrivateRoute/AddProduct';
 import AllProducts from './PrivateRoute/AllProducts';
+import Update from './PrivateRoute/Update';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,12 @@ const router = createBrowserRouter([
         path: "/:name",
         element: <AllProducts></AllProducts>,
         loader: ({ params }) => fetch(`http://localhost:5000/product/${params.name}`)
+        
       },
+      {
+        path:"/update",
+        element:<Update></Update>
+      }
     ]
   },
 ]);

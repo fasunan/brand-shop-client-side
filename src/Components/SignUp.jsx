@@ -82,14 +82,21 @@ const SignUp = () => {
   };
 
   return (
-    <div className="text-black">
+    <div className="text-black bg-white-400 p-16">
       <div className="hero min-h-screen">
-        <div className="hero-content flex-col">
+        <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left mb-5">
-            <h1 className="text-5xl text-blue-500 ">
-              Create an Account !!! Its free and Simple!!!!!
+            <h1 className="text-4xl text-blue-500 ">
+             Its easy to Create an Account !!! 
             </h1>
+            <p className="text-slate-800 font-medium">
+                  Already Have an Account? please
+                  <Link to={"/login"}>
+                    <button className="btn btn-link">Login</button>
+                  </Link>
+                </p>
           </div>
+
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
               <form onSubmit={handleCreateAccount}>
@@ -102,7 +109,7 @@ const SignUp = () => {
                     type="text"
                     name="name"
                     placeholder="Name"
-                    className="input input-bordered border-2 border-blue-500"
+                    className="input input-bordered border-2 border-purple-500"
                   />
                 </div>
                 <div className="form-control">
@@ -114,7 +121,7 @@ const SignUp = () => {
                     type="photo"
                     name="photo"
                     placeholder="photoURL"
-                    className="input input-bordered border-2 border-blue-500"
+                    className="input input-bordered border-2 border-purple-500"
                   />
                 </div>
                 <div className="form-control">
@@ -126,7 +133,7 @@ const SignUp = () => {
                     type="email"
                     name="email"
                     placeholder="Email"
-                    className="input input-bordered border-2 border-blue-500"
+                    className="input input-bordered border-2 border-purple-500"
                   />
                 </div>
                 <div className="form-control">
@@ -138,7 +145,7 @@ const SignUp = () => {
                     type={showPassword ? "text" : "password"}
                     name="password"
                     placeholder="Password"
-                    className="input input-bordered border-2 border-blue-500"
+                    className="input input-bordered border-2 border-purple-500"
                   />
                   <span
                     className="absolute mt-12 mr-8 right-2"
@@ -148,22 +155,16 @@ const SignUp = () => {
                   </span>
                 </div>
                 <div className="form-control mt-6">
-                  <button className=" btn btn-primary text-blue-500 text-2xl font-serif rounded bg-gradient-to-r from-pink-500 to-yellow-500">
-                    Register
+                {/* bg-gradient-to-r from-sky-900 via-indigo-900 to-purple-900 */}
+                  <button className=" btn btn-primary text-red-400 text-2xl font-serif rounded bg-gradient-to-r from-sky-900 via-indigo-900 to-purple-900">
+                    Sign Up
                   </button>
                 </div>
               </form>
               <ToastContainer></ToastContainer>
               {error && <p>{error}</p>}
               {success && <p>{success}</p>}
-              <div>
-                <p className="text-slate-800 font-medium">
-                  Already Have an Account? please
-                  <Link to={"/login"}>
-                    <button className="btn btn-link">Login</button>
-                  </Link>
-                </p>
-              </div>
+              
             </div>
           </div>
         </div>
