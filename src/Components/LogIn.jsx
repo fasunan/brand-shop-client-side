@@ -59,8 +59,8 @@ userLogIn(email, password)
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left mb-5">
-                        <h1 className="text-5xl text-blue-400 ">Login with</h1>
-                        <p className="text-slate-800 font-medium">
+                        <h1 className="text-5xl text-blue-400 mb-10">Login please</h1>
+                        <p className="text-slate-800 font-medium ">
                                     Do not Have an Account? please
                                     <Link to={"/signUp"}>
                                         <button className="btn btn-link">Create Account</button>
@@ -101,7 +101,7 @@ userLogIn(email, password)
                                     </span>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary  text-blue-500 text-2xl font-serif rounded bg-gradient-to-r from-pink-500 to-yellow-500">
+                                    <button className="btn btn-primary  text-red-500 text-2xl font-serif rounded bg-gradient-to-r from-sky-900 via-indigo-900 to-purple-900 ">
                                         Login
                                     </button>
                                 </div>
@@ -114,7 +114,7 @@ userLogIn(email, password)
                             </div>
                             <p className="text-pink-600">Or you can log in with </p>
                             <div className="gap-4 font-serif flex text-base">
-                                <button onClick={handleGoogleLogIn} className="btn w-36">
+                                <button onClick={handleGoogleLogIn} className="btn w-full">
                                     {" "}
                                     <FcGoogle className="text-lg"></FcGoogle>Google
                                 </button>
