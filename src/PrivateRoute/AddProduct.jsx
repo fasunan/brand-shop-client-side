@@ -30,7 +30,7 @@ const AddProduct = () => {
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Coffee Added Successfully',
+                    text: 'Product Added Successfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
@@ -57,8 +57,8 @@ const AddProduct = () => {
                     <div>
                         <h2 className="text-xl font-bold text-red-400 mb-2">Band Name</h2>
                         {/* <input type="text" name="brandName" placeholder="Band Name" className="input input-bordered input-primary w-full max-w-xs" /> */}
-                        <select className="select select-success w-full max-w-xs input" type="text" name="brandName" >
-                            <option value="brandName" disabled selected>Brand Name</option>
+                        <select className="select select-success w-full max-w-xs input" value="brandName" type="text" name="brandName" >
+                            <option  disabled selected>Brand Name</option>
                             <option>apple</option>
                             <option>samsung</option>
                             <option>microsoft</option>

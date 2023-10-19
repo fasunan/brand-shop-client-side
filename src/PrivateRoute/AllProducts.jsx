@@ -4,6 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllProducts = () => {
     const loadedProducts = useLoaderData();
     
+    
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 p-40 gap-6">
             {/* kichu style add korte hobe */}
@@ -20,10 +21,14 @@ const AllProducts = () => {
                             <p>Price ${brand.price}</p>
                             <p>Rating: {brand.rating}</p>
                             <div className="card-actions ">
-                                <button className="btn btn-primary w-full ">See Details</button>
-                                <Link to={'/update'}>
+                            <Link to={`/details/${brand._id}`}>
+                                <button className="btn btn-primary w-full ">See details</button>
+                                </Link>
+                                {/* <button className="btn btn-primary w-full ">See Details</button> */}
+                                <Link to={`/update/${brand._id}`}>
                                 <button className="btn btn-primary w-full ">Update</button>
                                 </Link>
+                                
                             </div>
                         </div>
                     </div>
