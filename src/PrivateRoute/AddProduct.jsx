@@ -56,37 +56,36 @@ const AddProduct = () => {
                     </div>
                     <div>
                         <h2 className="text-xl font-bold text-red-400 mb-2">Band Name</h2>
-                        {/* <input type="text" name="brandName" placeholder="Band Name" className="input input-bordered input-primary w-full max-w-xs" /> */}
-                        <select className="select select-success w-full max-w-xs input" value="brandName" type="text" name="brandName" >
-                            <option  disabled selected>Brand Name</option>
+                        <select className="select select-success w-full max-w-xs input"  type="text" name="brandName" >
+                            <option disabled selected>Brand Name</option>
                             <option>apple</option>
                             <option>samsung</option>
                             <option>microsoft</option>
                             <option>intel</option>
                             <option>sony</option>
                             <option>dell</option>
-                        
+
                         </select>
 
                     </div>
                     <div>
                         <h2 className="text-xl font-bold text-red-400 mb-2">Brand Type</h2>
-                        <input type="text" name="type" placeholder="Brand Type" className="input input-bordered input-primary w-full max-w-xs" />
+                        <input type="text" name="type" required placeholder="Brand Type" className="input input-bordered input-primary w-full max-w-xs" />
                     </div>
                     <div>
                         <h2 className="text-xl font-bold text-red-400 mb-2">Price</h2>
-                        <input type="number" name="price" placeholder="Price" className="input input-bordered input-primary w-full max-w-xs" />
+                        <input type="number" name="price" required placeholder="Price" className="input input-bordered input-primary w-full max-w-xs" />
                     </div>
                     <div>
                         <h2 className="text-xl font-bold text-red-400 mb-2">Details</h2>
-                        <input type="text" name="details" placeholder="Details" className="input input-bordered input-primary w-full max-w-xs" />
+                        <input type="text" name="details" required placeholder="Details" className="input input-bordered input-primary w-full max-w-xs" />
                     </div>
                     <div>
                         <h2 className="text-xl font-bold text-red-400 mb-2">Rating</h2>
-                        <input type="text" name="rating" placeholder="Rating" className="input input-bordered input-primary w-full max-w-xs" />
+                        <input type="text" name="rating" required placeholder="Rating" className="input input-bordered input-primary w-full max-w-xs" />
                     </div>
                 </div>
-                <input type="submit" value="Add Product" className="btn btn-block mt-6" />
+                <input type="submit" value="Add Product" className="btn mt-6 w-36 bg-indigo-200 text-sky-700" />
             </form>
         </div>
     );

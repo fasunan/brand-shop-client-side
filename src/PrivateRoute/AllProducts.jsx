@@ -42,8 +42,9 @@ const AllProducts = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 p-40 gap-6">
            
 
-            {
-                loadedProducts.map(brand => <div key={brand.id} className="flex justify-center">
+            { loadedProducts &&
+
+                loadedProducts?.map(brand => <div key={brand._id} className="flex justify-center">
                     <div className="card w-96 bg-indigo-200 shadow-xl">
                         <figure className="px-10 pt-10">
                             <img src={brand.photo} alt="" className="rounded-xl" />
