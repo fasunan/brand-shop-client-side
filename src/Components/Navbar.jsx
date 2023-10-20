@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { BsCart4 } from "react-icons/bs";
 
 const Navbar = () => {
   const { user, userLogOut } = useContext(AuthContext);
@@ -28,6 +29,10 @@ const Navbar = () => {
       <li>
         {" "}
         <NavLink to={"/login"}>Login</NavLink>
+      </li>
+      <li>
+        {" "}
+        <NavLink to={"/addToCart"}><button className="flex"><BsCart4 className='text-cyan-500 mr-1  text-lg'></BsCart4>My Cart</button></NavLink>
       </li>
 
     </>
