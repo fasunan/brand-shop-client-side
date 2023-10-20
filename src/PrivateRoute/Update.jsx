@@ -94,9 +94,7 @@ const Update = () => {
                 </div>
                 <input type="submit" value="Update Product" className="btn btn-block mt-6" />
             </form>
-            {/* {
-                updateData.map(details=><ProductDetails key={details.id} details={details}></ProductDetails>)
-            } */}
+            
         </div>
     );
 };

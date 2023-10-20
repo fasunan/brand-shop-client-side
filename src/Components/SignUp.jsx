@@ -31,7 +31,7 @@ const SignUp = () => {
     const password = form.get("password");
     console.log(email, password, name);
 
-    
+ 
 
     setError("");
     setSuccess("");

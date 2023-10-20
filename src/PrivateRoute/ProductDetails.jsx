@@ -7,29 +7,29 @@ const ProductDetails = () => {
     const SeeDetails = useLoaderData();
     const { name, photo, brandName, type, price, details, rating, _id } = SeeDetails;
 
-const handleAddToCart = ()=>{
-
-    fetch(`http://localhost:5173/details/${_id}`, {
-        method: "POST",
-        headers:{
-            'content-type' : 'application/json'
-        },
-        body: JSON.stringify(SeeDetails)
-    })
-    .then(res=>res.json())
-        .then(data=>{
-            console.log(data)
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Product Added Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-            }
+    const handleAddToCart = () => {
+        const addCart = { name, photo, brandName, type, price, details, rating, _id };
+        fetch(`http://localhost:5000/details`, {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addCart)
         })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
 
-}
+    }
 
     return (
         <div className='p-32'>
@@ -42,6 +42,7 @@ const handleAddToCart = ()=>{
                         <div className="text-lg flex">
                             <p className='flex'>Price: <BsCurrencyDollar className='mt-[6px]'></BsCurrencyDollar> {price}</p>
                             <Link><button onClick={handleAddToCart} className="btn shadow-lg"><BsCart4 className='text-cyan-500'></BsCart4>Add To Cart</button></Link>
+                            
                         </div>
                         <div className='flex'>
                             <p>Brand: {brandName}</p>

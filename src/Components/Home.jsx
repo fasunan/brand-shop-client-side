@@ -7,8 +7,23 @@ import Banner from "./Banner";
 import WhatsNew from "./WhatsNew";
 
 const Home = () => {
+    // const [theme, setTheme] = useState("light");
 
     const loadedData = useLoaderData();
+
+    // const changeTheme = ()=>{
+    //     const newTheme = theme === "light" ? "dark" : "light";
+    //     setTheme(newTheme)
+    //     localStorage.setItem("theme", newTheme)
+    // };
+
+    // useEffect(() => {
+    //     const storedTheme = localStorage.getItem("theme");
+    //     if (storedTheme) {
+    //       setTheme(storedTheme);
+    //     }
+    //   }, []);
+    //   const themeClass = theme === "light" ? "light-theme" : "dark-theme";
 
     useEffect(() => {
         Aos.init();
@@ -29,8 +44,8 @@ const Home = () => {
                     </div>
                     <div className="grid grid-cols-1 gap-2 w-96 rounded-lg " data-aos="zoom-in">
                         <h2 className="text-3xl mb-6 font-bold">Explore Our Trusted Brand</h2>
-                        {
-                            loadedData.map((data, index) => <div key={index}>
+                        { loadedData &&
+                            loadedData?.map((data, index) => <div key={index}>
 
                                 <div className=" card  card-side bg-gradient-to-r p-2 from-sky-900 via-indigo-900 to-purple-900 gap-2 shadow-2xl " data-aos="zoom-in-left" data-aos-duration="4000">
                                     <figure><img className="w-[200px] h-[150]" src={data.image} alt="Movie" /></figure>
