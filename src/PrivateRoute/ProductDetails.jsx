@@ -1,10 +1,36 @@
 import { BsCart4, BsCurrencyDollar, BsStar } from 'react-icons/bs';
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 
 const ProductDetails = () => {
     const SeeDetails = useLoaderData();
-    const { name, photo, brandName, type, price, details, rating } = SeeDetails;
+    const { name, photo, brandName, type, price, details, rating, _id } = SeeDetails;
+
+const handleAddToCart = ()=>{
+
+    fetch(`http://localhost:5173/details/${_id}`, {
+        method: "POST",
+        headers:{
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(SeeDetails)
+    })
+    .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Product Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+
+}
+
     return (
         <div className='p-32'>
             <h2 className='text-4xl font-semibold text-center text-rose-700 bg-white shadow-lg mb-10 p-2'>Details of Your Desire Product</h2>
@@ -15,7 +41,7 @@ const ProductDetails = () => {
                         <figure><img className='shadow' src={photo} /></figure>
                         <div className="text-lg flex">
                             <p className='flex'>Price: <BsCurrencyDollar className='mt-[6px]'></BsCurrencyDollar> {price}</p>
-                            <Link to={"/addToCart"}><button className="btn shadow-lg"><BsCart4 className='text-cyan-500'></BsCart4>Add To Cart</button></Link>
+                            <Link><button onClick={handleAddToCart} className="btn shadow-lg"><BsCart4 className='text-cyan-500'></BsCart4>Add To Cart</button></Link>
                         </div>
                         <div className='flex'>
                             <p>Brand: {brandName}</p>

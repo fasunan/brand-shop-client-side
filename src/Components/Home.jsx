@@ -30,7 +30,7 @@ const Home = () => {
                     <div className="grid grid-cols-1 gap-2 w-96 rounded-lg " data-aos="zoom-in">
                         <h2 className="text-3xl mb-6 font-bold">Explore Our Trusted Brand</h2>
                         {
-                            loadedData.map(data => <div key={data.id}>
+                            loadedData.map((data, index) => <div key={index}>
 
                                 <div className=" card  card-side bg-gradient-to-r p-2 from-sky-900 via-indigo-900 to-purple-900 gap-2 shadow-2xl " data-aos="zoom-in-left" data-aos-duration="4000">
                                     <figure><img className="w-[200px] h-[150]" src={data.image} alt="Movie" /></figure>
