@@ -9,7 +9,7 @@ const ProductDetails = () => {
 
     const handleAddToCart = () => {
         const addCart = { name, photo, brandName, type, price, details, rating, _id };
-        fetch(`http://localhost:5000/details`, {
+        fetch(`https://assignment-10-server-2vs9nayzy-al-sunans-projects.vercel.app/details`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

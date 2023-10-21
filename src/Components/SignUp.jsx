@@ -62,7 +62,7 @@ const SignUp = () => {
 
         // 
         const user={email}
-        fetch('http://localhost:5000/user', {
+        fetch('https://assignment-10-server-2vs9nayzy-al-sunans-projects.vercel.app/user', {
           method: 'POST',
           headers:{
             'content-type' : 'application/json' 

@@ -22,7 +22,7 @@ const AddToCart = () => {
         .then(result=>{
             if(result.isConfirmed){
                 console.log('deleted')
-                fetch(`http://localhost:5000/details/${id}`, {
+                fetch(`https://assignment-10-server-2vs9nayzy-al-sunans-projects.vercel.app/details/${id}`, {
                         method: 'DELETE'
                     })
                     .then(res => res.json())

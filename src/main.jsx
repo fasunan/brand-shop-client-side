@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         path: "/:name",
         element:
           <AllProducts></AllProducts>,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.name}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-2vs9nayzy-al-sunans-projects.vercel.app/product/${params.name}`)
 
       },
       {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <Update></Update>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/productsId/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-2vs9nayzy-al-sunans-projects.vercel.app/productsId/${params.id}`)
       },
       {
         path: "/details/:id",
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
             <ProductDetails></ProductDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/productsId/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-2vs9nayzy-al-sunans-projects.vercel.app/productsId/${params.id}`)
       },
       {
         path: "/addToCart",
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
             <AddToCart></AddToCart>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/details`)
+        loader: () => fetch(`https://assignment-10-server-2vs9nayzy-al-sunans-projects.vercel.app/details`)
       }
     ]
   },

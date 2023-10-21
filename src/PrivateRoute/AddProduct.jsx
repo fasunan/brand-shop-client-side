@@ -17,7 +17,7 @@ const AddProduct = () => {
         console.log(brandName);
 
         // send data to server
-        fetch('http://localhost:5000/product', {
+        fetch('https://assignment-10-server-2vs9nayzy-al-sunans-projects.vercel.app/product', {
             method: "POST",
             headers:{
                 'content-type' : 'application/json'
