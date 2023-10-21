@@ -14,7 +14,7 @@ const WhatsNew = () => {
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar">
                                             <div className="rounded w-40">
-                                                <img src="https://i.ibb.co/JpwqmqY/new-1.jpg" alt="Avatar Tailwind CSS Component" />
+                                                <img  src="https://i.ibb.co/JpwqmqY/new-1.jpg" alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                         <div>
@@ -37,7 +37,7 @@ const WhatsNew = () => {
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar">
                                             <div className="rounded w-40">
-                                                <img src="https://i.ibb.co/k47YJxD/new-2.jpg" alt="Avatar Tailwind CSS Component" />
+                                                <img data-aos="flip-left" src="https://i.ibb.co/k47YJxD/new-2.jpg" alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                         <div>
@@ -59,7 +59,7 @@ const WhatsNew = () => {
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar">
                                             <div className="rounded w-40">
-                                                <img src="https://i.ibb.co/jfLM4c3/new-3.jpg" alt="Avatar Tailwind CSS Component" />
+                                                <img data-aos="flip-left" src="https://i.ibb.co/jfLM4c3/new-3.jpg" alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                         <div>
@@ -82,7 +82,7 @@ const WhatsNew = () => {
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar">
                                             <div className="rounded w-40">
-                                                <img src="https://i.ibb.co/746q4Df/apple-4.jpg" alt="Avatar Tailwind CSS Component" />
+                                                <img data-aos="flip-left" src="https://i.ibb.co/746q4Df/apple-4.jpg" alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                         <div>

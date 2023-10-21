@@ -62,7 +62,7 @@ const AddToCart = () => {
                                     <p className='flex'>Price: <BsCurrencyDollar className='mt-[6px]'></BsCurrencyDollar> {cart.price}</p>
                                     <p>Brand: {cart.brandName}</p>
                                 </div>
-                                <button onClick={()=>handleDelete(cart._id)} className="btn bg-indigo-300 shadow-lg text-base text-red-700">Delete<MdAutoDelete></MdAutoDelete></button>
+                                <button onClick={()=>handleDelete(cart._id)} className="btn border-none bg-indigo-300 shadow-lg text-base text-red-700">Delete<MdAutoDelete></MdAutoDelete></button>
                             </div>
                         </div>
 

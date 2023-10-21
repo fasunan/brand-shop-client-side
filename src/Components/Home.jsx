@@ -1,6 +1,8 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { useEffect, useState } from "react";
+import { CiDark } from 'react-icons/ci';
+
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Banner from "./Banner";
@@ -8,31 +10,38 @@ import WhatsNew from "./WhatsNew";
 
 const Home = () => {
     const [theme, setTheme] = useState("light");
-    // console.log(theme)
+
     const loadedData = useLoaderData();
 
-    const changeTheme = () => {
-
-        const newTheme = theme === "light" ? "dark" : "light";
-        setTheme(newTheme)
-        localStorage.setItem("theme", newTheme)
-    };
 
     useEffect(() => {
-        const storedTheme = localStorage.getItem("theme");
-        if (storedTheme) {
-            setTheme(storedTheme);
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
         }
-    }, []);
-    const themeClass = theme === "light" ? "light-theme" : "dark-theme";
+    }, [theme]);
+
+    const handleChangeTheme = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+
+    };
+
+
+
 
     useEffect(() => {
         Aos.init();
     }, []);
     return (
-        // <div>
-        <div className={`home-page ${themeClass}`}>
+
+        <div className="dark:bg-black">
             <Banner></Banner>
+            <div className="-mt-14 absolute ml-8">
+                <button onClick={handleChangeTheme} className="btn btn-sm border-none rounded-3xl bg-transparent text-purple-400">
+                    Mode <CiDark className="text-lg"></CiDark>
+                </button>
+            </div>
             <div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-56 mt-10 mb-5  mr-16 ">
 
@@ -44,8 +53,8 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <div className="grid grid-cols-1 gap-2 w-96 rounded-lg " data-aos="zoom-in">
-                        <h2 className="text-3xl mb-6 font-bold">Explore Our Trusted Brand</h2>
+                    <div className="grid grid-cols-1 gap-2 w-96 rounded-lg ml-10 " data-aos="zoom-in">
+                        <h2 className="text-3xl mb-6 font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-900 via-indigo-900 to-purple-900">Explore Our Trusted Brand</h2>
                         {loadedData &&
                             loadedData?.map((data, index) => <div key={index}>
 
@@ -63,15 +72,20 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                <button onClick={changeTheme} className="p-2 m-2 rounded-md bg-purple-500 text-white">
-                    Change Theme
-                </button>
+
+            <div data-aos="zoom-in"  data-aos-duration="3000" className="">
+            <div className="text-center shadow-2xl mt-16" >
+            <h2 className="text-5xl  mb-4 font-bold text-purple-800">Why Choose Us!</h2>
+            <p className="text-xl text-red-500">When You’re Looking To Shop for you and Your Home…<br />
+                You Need A shop You Can Depend On! <br />
+                And This is the Shop where we serve.......
+                </p>
+                
             </div>
-            <h2 className="text-3xl text-center shadow-2xl mb-4 font-bold text-purple-800">Why Choose Us</h2>
-            <div className=" flex justify-center p-5 shadow-xl mt-4 mb-4" >
+            <div className=" flex justify-center p-5 mt-4 mb-4" >
                 <img src="https://i.ibb.co/59H15Nj/whychoose-wideweb.png" alt="" />
 
+            </div>
             </div>
         </div>
     );
